@@ -4,10 +4,10 @@
   <PropertyGroup>
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
-    <ProjectGuid>{610F9A72-92CF-453A-91D3-AC73BE11210E}</ProjectGuid>
+    <ProjectGuid>{D4628D6D-5A93-4DF4-A293-298126320B17}</ProjectGuid>
     <OutputType>Exe</OutputType>
-    <RootNamespace>ConsoleApp</RootNamespace>
-    <AssemblyName>ConsoleApp</AssemblyName>
+    <RootNamespace>Content.ConsoleApp</RootNamespace>
+    <AssemblyName>Content.ConsoleApp</AssemblyName>
     <TargetFrameworkVersion>v4.6.2</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
     <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
@@ -47,6 +47,20 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\Content.Adapter.Dictionary\Content.Adapter.Dictionary.csproj">
+      <Project>{A45B5177-970E-453F-BD57-3CB13A9D8B81}</Project>
+      <Name>Content.Adapter.Dictionary</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Content.Application\Content.Application.csproj">
+      <Project>{7A73881A-DF52-41F2-A707-942B267D9C1B}</Project>
+      <Name>Content.Application</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Content.Domain\Content.Domain.csproj">
+      <Project>{83B54EA3-B3AF-4B97-BDAC-C8FF6D49F045}</Project>
+      <Name>Content.Domain</Name>
+    </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

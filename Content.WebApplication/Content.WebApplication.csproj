@@ -182,6 +182,7 @@
     <Compile Include="Areas\HelpPage\SampleGeneration\SampleDirection.cs" />
     <Compile Include="Areas\HelpPage\SampleGeneration\TextSample.cs" />
     <Compile Include="Areas\HelpPage\XmlDocumentationProvider.cs" />
+    <Compile Include="Controllers\ArticlesController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Controllers\ValuesController.cs" />
     <Compile Include="Global.asax.cs">
@@ -275,6 +276,20 @@
     <None Include="packages.config" />
     <Content Include="Scripts\jquery-3.3.1.slim.min.map" />
     <Content Include="Scripts\jquery-3.3.1.min.map" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\Content.Adapter.Dictionary\Content.Adapter.Dictionary.csproj">
+      <Project>{a45b5177-970e-453f-bd57-3cb13a9d8b81}</Project>
+      <Name>Content.Adapter.Dictionary</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Content.Application\Content.Application.csproj">
+      <Project>{7A73881A-DF52-41F2-A707-942B267D9C1B}</Project>
+      <Name>Content.Application</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Content.Domain\Content.Domain.csproj">
+      <Project>{83B54EA3-B3AF-4B97-BDAC-C8FF6D49F045}</Project>
+      <Name>Content.Domain</Name>
+    </ProjectReference>
   </ItemGroup>
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>
