@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Collections.Generic;
 using Content.Adapter.Dictionary;
 using Content.Application;
 using Content.Domain.Model.Article;
@@ -9,11 +10,14 @@ namespace Content.ConsoleApp
     {
         static void Main(string[] args)
         {
-            var article = new Article();
-            article.AddProduct(new Product("002852", "招商财富宝A"));
-
             var articleApplicationService = new ArticleApplicationService(new DictionaryArticleRepository());
+
+            var article = new Article("An article title", "An article content",
+                new List<Product> {new Product("002852", "招商财富宝A")});
+
             articleApplicationService.CreateArticle(article);
+
+            articleApplicationService.Publish(article.Id);
 
             var articles = articleApplicationService.GetArticles();
 

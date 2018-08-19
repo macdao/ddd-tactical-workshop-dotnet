@@ -4,11 +4,13 @@ namespace Content.Domain.Model.Article
 {
     public class Article
     {
-        public Article()
+        public Article(string title, string content, IEnumerable<Product> products)
         {
             Id = new ArticleId();
-            Products = new List<Product>();
             Status = ArticleStatus.Draft;
+            Title = title;
+            Content = content;
+            Products = new List<Product>(products);
         }
 
         public ArticleId Id { get; }
@@ -21,11 +23,6 @@ namespace Content.Domain.Model.Article
 
         public ArticleStatus Status { get; private set; }
 
-        public void AddProduct(Product product)
-        {
-            Products.Add(product);
-        }
-
         public void Publish()
         {
             Status = ArticleStatus.Published;
@@ -35,6 +32,7 @@ namespace Content.Domain.Model.Article
     public enum ArticleStatus
     {
         Draft,
-        Published
+        Published,
+        Deleted
     }
 }

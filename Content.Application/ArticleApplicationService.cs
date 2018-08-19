@@ -29,5 +29,10 @@ namespace Content.Application
         {
             return _articleRepository.FindAll();
         }
+
+        public Article GetArticle(ArticleId articleId)
+        {
+            return _articleRepository.FindById(articleId);
+        }
     }
 }
